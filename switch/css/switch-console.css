@@ -1,0 +1,805 @@
+/*
+    Imports
+*/
+/*
+    Global Styles
+*/
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url("../assets/images/switch-background.png");
+  background-size: cover;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+* {
+  position: absolute;
+}
+
+*:before, *:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+
+/*
+    Switch
+*/
+.switch {
+  height: 500px;
+  width: 1100px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+/*
+    Switch Shoulder Buttons
+*/
+.shoulder {
+  width: 130px;
+  height: 100px;
+  background: black;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+}
+
+.shoulder--left {
+  -webkit-animation: controller-left .6s linear;
+          animation: controller-left .6s linear;
+  top: -5px;
+  left: -5px;
+  border-radius: 200px 8px 8px 0;
+}
+
+.shoulder--right {
+  -webkit-animation: controller-right .6s linear;
+          animation: controller-right .6s linear;
+  top: -5px;
+  right: -5px;
+  border-radius: 0 200px 0 0;
+}
+
+/*
+    Switch Controllers
+*/
+.controller {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  /*
+        Left Controller
+    */
+  /*
+        Right Controller
+    */
+  /*
+        Switch Controller Buttons
+    */
+  /*
+        Switch Controller Buttons
+    */
+}
+
+.controller--left {
+  background: #00C4E3;
+  left: 0;
+  border-radius: 100px 8px 5px 100px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+  -webkit-animation: controller-left .6s linear;
+          animation: controller-left .6s linear;
+}
+
+.controller--right {
+  background: #FF5F53;
+  right: 0;
+  border-radius: 8px 100px 100px 5px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+  -webkit-animation: controller-right .6s linear;
+          animation: controller-right .6s linear;
+}
+
+.controller--right .home {
+  width: 40px;
+  height: 40px;
+  background: #b7b8bd;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  top: 360px;
+  left: 40px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.controller--right .home__inner {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #505258;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller--right .home__inner:after {
+  width: 100%;
+  height: 70%;
+  background-image: url("../assets/iconmonstr-home-8.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .analog {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #202022;
+  border: 2px solid #000000;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5), inset 0 10px 10px rgba(255, 255, 255, 0.2);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .analog:before {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  background: #202022;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .analog--left {
+  top: 100px;
+  left: 50%;
+}
+
+.controller .analog--right {
+  top: 250px;
+  left: 50%;
+}
+
+.controller .minus {
+  width: 30px;
+  height: 10px;
+  background: #38393D;
+  right: 20px;
+  top: 40px;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.controller .plus {
+  width: 30px;
+  height: 10px;
+  background: #38393D;
+  left: 20px;
+  top: 40px;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.controller .plus:after {
+  width: 30px;
+  height: 10px;
+  background: #38393D;
+  left: 0px;
+  top: 0px;
+  border-radius: 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.controller .button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  background: #38393d;
+  border-radius: 50%;
+  color: #ffffff;
+  border: 2px solid black;
+  -webkit-box-shadow: inset 0 8px 10px rgba(255, 255, 255, 0.3), 0 0 10px rgba(0, 0, 0, 0.8);
+          box-shadow: inset 0 8px 10px rgba(255, 255, 255, 0.3), 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.controller .button:after {
+  width: 40px;
+  height: 40px;
+  font-size: 1.3em;
+  font-weight: 300;
+  border-radius: 50%;
+  border-bottom: 1.5px solid black;
+}
+
+.controller .button--x {
+  top: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .button--x:after {
+  width: 100%;
+  height: 100%;
+  content: 'X';
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .button--b {
+  top: 160px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .button--b:after {
+  width: 100%;
+  height: 100%;
+  content: 'B';
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .button--a {
+  top: 120px;
+  left: 75%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .button--a:after {
+  width: 100%;
+  height: 100%;
+  content: 'A';
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .button--y {
+  top: 120px;
+  left: 23%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .button--y:after {
+  width: 100%;
+  height: 100%;
+  content: 'Y';
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .capture {
+  width: 35px;
+  height: 35px;
+  background: #38393D;
+  top: 370px;
+  right: 40px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.controller .capture:after {
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: #202022;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .dpad {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  background: #38393d;
+  border-radius: 50%;
+  color: #ffffff;
+  border: 2px solid black;
+  -webkit-box-shadow: inset 0 8px 10px rgba(255, 255, 255, 0.1), 0 5px 10px rgba(0, 0, 0, 0.8);
+          box-shadow: inset 0 8px 10px rgba(255, 255, 255, 0.1), 0 5px 10px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.controller .dpad--up {
+  top: 220px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .dpad--up:after {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  border-left: 8px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #131415;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.controller .dpad--down {
+  top: 300px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .dpad--down:after {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  border-top: 15px solid #131415;
+  border-left: 8px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  top: 13px;
+  left: 9px;
+}
+
+.controller .dpad--left {
+  top: 260px;
+  left: 23%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .dpad--left:after {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 15px solid #131415;
+  border-bottom: 8px solid transparent;
+  top: 10px;
+  left: -1px;
+}
+
+.controller .dpad--right {
+  top: 260px;
+  left: 75%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.controller .dpad--right:after {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  border-top: 8px solid transparent;
+  border-left: 15px solid #131415;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  top: 10px;
+  left: 13px;
+}
+
+/*
+    Switch Body
+*/
+.body {
+  width: 70%;
+  height: 100%;
+  background: #282a2c;
+  left: 15%;
+  -webkit-box-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);
+  /*
+        Switch Body Top Buttons
+    */
+  /*
+        Switch Cut
+    */
+  /*
+        Switch Frame
+    */
+  /*
+        Switch Screen
+    */
+}
+
+.body:after {
+  width: 100%;
+  height: 20px;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #282a2c), color-stop(60%, rgba(16, 16, 18, 0.5)));
+  background-image: linear-gradient(to bottom, #282a2c 40%, rgba(16, 16, 18, 0.5) 60%);
+}
+
+.body:before {
+  width: 736px;
+  height: 20px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(40%, #282a2c), color-stop(60%, rgba(125, 132, 137, 0.4)));
+  background-image: linear-gradient(to top, #282a2c 40%, rgba(125, 132, 137, 0.4) 60%);
+}
+
+.body .top-button {
+  width: 60px;
+  height: 10px;
+  background: #282a2c;
+  top: -2px;
+  left: 100px;
+  z-index: -1;
+}
+
+.body .top-button:after {
+  width: 20px;
+  height: 15px;
+  background: #282a2c;
+  top: -2px;
+}
+
+.body .top-button:before {
+  width: 20px;
+  height: 10px;
+  background: #282a2c;
+  top: -2px;
+  right: 0;
+}
+
+.body .cut--left {
+  background: #00c8e8;
+  width: 17px;
+  height: 20px;
+  border-radius: 0 0 100% 0;
+  top: 0;
+  left: 0;
+}
+
+.body .cut--right {
+  background: #ff6458;
+  width: 17px;
+  height: 20px;
+  border-radius: 0 0 0 130%;
+  top: 0;
+  right: 0;
+}
+
+.body .inner-frame {
+  width: 90%;
+  height: 95%;
+  background: black;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.body .screen {
+  width: 85%;
+  height: 85%;
+  background-color: #FF5F53;
+  -webkit-animation: screen-fade 2s ease-in;
+          animation: screen-fade 2s ease-in;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 3px;
+}
+
+.body .screen-controller__left {
+  height: 210px;
+  width: 100px;
+  border: 15px solid #ffffff;
+  top: 30px;
+  left: 30%;
+  border-radius: 50px 0 0 50px;
+  -webkit-animation: screen-controller-left 1s ease;
+          animation: screen-controller-left 1s ease;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.body .screen-controller__left:after {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.body .screen-controller__right {
+  height: 210px;
+  width: 100px;
+  background: #ffffff;
+  top: 30px;
+  right: 33%;
+  border-radius: 0 50px 50px 0;
+  -webkit-animation: screen-controller-right 1s ease;
+          animation: screen-controller-right 1s ease;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.body .screen-controller__right:after {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FF5F53;
+  top: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.heading {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.heading .main {
+  font-size: 2.5em;
+  bottom: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-animation: fadeInText 1s ease;
+          animation: fadeInText 1s ease;
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.heading .sub {
+  font-size: 3.5em;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-weight: bold;
+  opacity: 0;
+  -webkit-animation: fadeInText 1s ease;
+          animation: fadeInText 1s ease;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.heading .sub small {
+  font-size: 16px;
+  margin-left: 5px;
+  bottom: 15px;
+}
+
+/*
+    Switch Animations
+*/
+@-webkit-keyframes controller-left {
+  0% {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes controller-left {
+  0% {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes controller-right {
+  0% {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes controller-right {
+  0% {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes screen-fade {
+  0% {
+    background-color: #000000;
+    opacity: 0;
+  }
+  100% {
+    background-color: #FF5F53;
+    opacity: 1;
+  }
+}
+
+@keyframes screen-fade {
+  0% {
+    background-color: #000000;
+    opacity: 0;
+  }
+  100% {
+    background-color: #FF5F53;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes screen-controller-right {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  90% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes screen-controller-right {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  90% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes screen-controller-left {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  90% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes screen-controller-left {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  90% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

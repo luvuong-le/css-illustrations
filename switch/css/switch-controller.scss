@@ -1,0 +1,34 @@
+// Variables
+$switch-red: #FF5449;
+$switch-blue: #00C9E5;
+$switch-outer-frame: #7D8489;
+$switch-inner-frame: #101012;
+$switch-button: #38393D;
+$switch-charging: #68D869;
+
+
+// Global Styles
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    position: absolute;
+}
+
+*:before, *:after {
+    content: '';
+    position: absolute;
+}
