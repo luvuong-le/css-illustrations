@@ -1,0 +1,347 @@
+/* Imports */
+@import "mixins";
+
+/* Variables */
+$piano-width: 565px;
+$piano-height: 150px;
+$piano-casing: #000;
+$piano-key-border: #000;
+$piano-key-list: #fff;
+$piano-key-white: #fff;
+$piano-key-black: #000;
+$piano-key-black-height: 65%;
+$piano-key-size: 35px;
+$piano-key-black-pos-start: $piano-key-size / 2;
+$piano-octave-white-keys: 7;
+$piano-octave-black-keys: 5;
+
+/* Global Styles */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #13315C;
+    overflow: hidden;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+* {
+    position: absolute;
+}
+
+*:before, *:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+}
+
+/*
+    Piano Styles
+*/
+
+@keyframes boxPulse {
+    0% {
+        box-shadow: 0 0 10px white;
+    }
+    50% {
+        box-shadow: 0 0 20px white;
+    }
+    100% {
+        box-shadow: 0 0 10px white;
+    }
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    top: 15%;
+    background-color: white;
+    box-shadow: 0 0 30px white;
+    z-index: 3;
+
+    & span {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        color: #13315c;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-size: 5em;
+        transition: transform .5s ease, opacity .5s ease;
+    }
+
+    @media only screen and (max-width: 768px) {
+        & span {
+            font-size: 1.6em;
+        }
+    }
+}
+
+.songs {
+    position: relative;
+    width:  100%;
+    margin: 0 auto;
+    left: 50%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+
+    & .title {
+        position: relative;
+        transform: translate(-50%);
+        color: white;
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        flex: row wrap;
+        transform: translate(-50%);
+        top: 100%;
+    }
+}
+
+.button {
+    width: 100%
+}
+
+@keyframes rotatingCircle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.meter {
+    @include center();
+    width: 400px;
+    height: 400px;
+    opacity: .5;
+    border-top: 5px solid white;
+    border-bottom: 5px solid lighten($color: #13315c, $amount: 20%);
+    transform:  translate(-50%, -50%) rotate(0);
+    border-radius: 50%;
+    transition: height .5s ease, width .5s ease;
+    animation: rotatingCircle 3s ease infinite;
+}
+
+.piano {
+    @include center();
+    width: $piano-width;
+    height: $piano-height;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+
+    &__octave {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        box-shadow: 0 0 30px black;
+        // animation: boxPulse .5s ease infinite;
+    }
+
+    &__key {
+        height: 100%;
+        width: $piano-key-size;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: 0 0 10px white;
+        cursor: pointer;
+        transition: transform .5s ease, opacity .5s ease;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:before {
+            content: attr(data-note);
+            bottom: 0;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+        
+        &--white {
+            position: relative;
+            background: $piano-key-white;
+            border: 1px solid rgba($piano-key-border, 0.3);
+            z-index: 1;
+        }
+
+        &--black {
+            position: absolute;
+            height: $piano-key-black-height;
+            border: 2px solid $piano-key-white;
+            background-color: $piano-key-black;
+            z-index: 2;
+
+            &:before {
+                font-size: .5em;
+                color: white;
+            }
+
+            $key-black-positions: (
+                1: calc(#{$piano-key-black-pos-start}), // 10px
+                2: calc((#{$piano-key-black-pos-start} * 2) + #{$piano-key-black-pos-start}), // 30px
+                3: calc((#{$piano-key-size} * 3) + #{$piano-key-black-pos-start}), // 70px
+                4: calc((#{$piano-key-size} * 4) + #{$piano-key-black-pos-start}), // 90px
+                5: calc((#{$piano-key-size} * 5) + #{$piano-key-black-pos-start})  // 110px
+            );
+
+            @each $i, $position in $key-black-positions {
+                &:nth-child(#{$i}) {
+                    top: 0;
+                    left: $position;
+                }
+            }
+        }
+    }
+}
+
+.allowAudio {
+    display: none;
+}
+
+.button {
+    width: 100%;
+    position: relative;
+    border: 0;
+    margin: 0 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px white;
+    border-radius: 3px;
+    font-family: "Poppins", sans-serif;
+    color: #13315C;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity .5s ease;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.config {
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    top: 5%;
+}
+
+.oscillator {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.oscillator label {
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+}
+
+.oscillator select {
+    position: relative;
+    border: 0;
+    padding: 10px;
+    box-shadow: 0 0 10px white;
+    font-weight: bold;
+    color: #13315C;
+}
+
+.oscillator select option {
+    font-weight: bold;
+    color: #13315C;
+}
+
+@media only screen and (max-width: 768px) {
+    html, body { 
+        overflow: hidden;
+    }
+
+    .piano {
+        top: 50%;
+        height: $piano-height + 100px;
+        flex-flow: column;
+    }
+
+    .allowAudio {
+        display: block;
+        padding :10px;
+        margin-top: 25px;
+    }
+
+    .songs {
+        top: 20%;
+    }
+
+    .config {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        top: 5%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    html, body { 
+        overflow: hidden;
+    }
+
+    .piano {
+        top: 50%;
+        height: $piano-height + 100px;
+        flex-flow: column;
+    }
+
+    .allowAudio {
+        display: block;
+        padding :10px;
+        margin-top: 25px;
+    }
+
+    .songs {
+        top: 15%;
+    }
+
+    header {
+        top: 18%;
+    }
+
+    .config {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        top: 5%;
+    }
+}

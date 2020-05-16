@@ -1,0 +1,430 @@
+/* Imports */
+/* Variables */
+/* Global Styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #13315C;
+  overflow: hidden;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+* {
+  position: absolute;
+}
+
+*:before, *:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+
+/*
+    Piano Styles
+*/
+@-webkit-keyframes boxPulse {
+  0% {
+    -webkit-box-shadow: 0 0 10px white;
+            box-shadow: 0 0 10px white;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 20px white;
+            box-shadow: 0 0 20px white;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 10px white;
+            box-shadow: 0 0 10px white;
+  }
+}
+@keyframes boxPulse {
+  0% {
+    -webkit-box-shadow: 0 0 10px white;
+            box-shadow: 0 0 10px white;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 20px white;
+            box-shadow: 0 0 20px white;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 10px white;
+            box-shadow: 0 0 10px white;
+  }
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  top: 15%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 30px white;
+          box-shadow: 0 0 30px white;
+  z-index: 3;
+}
+
+header span {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #13315c;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 5em;
+  -webkit-transition: opacity .5s ease, -webkit-transform .5s ease;
+  transition: opacity .5s ease, -webkit-transform .5s ease;
+  transition: transform .5s ease, opacity .5s ease;
+  transition: transform .5s ease, opacity .5s ease, -webkit-transform .5s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  header span {
+    font-size: 1.6em;
+  }
+}
+
+.songs {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  left: 50%;
+  top: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.songs .title {
+  position: relative;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  color: white;
+  text-align: center;
+}
+
+.songs__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row wrap;
+          flex: row wrap;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  top: 100%;
+}
+
+.button {
+  width: 100%;
+}
+
+@-webkit-keyframes rotatingCircle {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotatingCircle {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.meter {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  opacity: .5;
+  border-top: 5px solid white;
+  border-bottom: 5px solid #245eb1;
+  -webkit-transform: translate(-50%, -50%) rotate(0);
+          transform: translate(-50%, -50%) rotate(0);
+  border-radius: 50%;
+  -webkit-transition: height .5s ease, width .5s ease;
+  transition: height .5s ease, width .5s ease;
+  -webkit-animation: rotatingCircle 3s ease infinite;
+          animation: rotatingCircle 3s ease infinite;
+}
+
+.piano {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 565px;
+  height: 150px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+}
+
+.piano__octave {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-shadow: 0 0 30px black;
+          box-shadow: 0 0 30px black;
+}
+
+.piano__key {
+  height: 100%;
+  width: 35px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  cursor: pointer;
+  -webkit-transition: opacity .5s ease, -webkit-transform .5s ease;
+  transition: opacity .5s ease, -webkit-transform .5s ease;
+  transition: transform .5s ease, opacity .5s ease;
+  transition: transform .5s ease, opacity .5s ease, -webkit-transform .5s ease;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.piano__key:before {
+  content: attr(data-note);
+  bottom: 0;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.piano__key:hover {
+  opacity: 0.5;
+}
+
+.piano__key--white {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.piano__key--black {
+  position: absolute;
+  height: 65%;
+  border: 2px solid #fff;
+  background-color: #000;
+  z-index: 2;
+}
+
+.piano__key--black:before {
+  font-size: .5em;
+  color: white;
+}
+
+.piano__key--black:nth-child(1) {
+  top: 0;
+  left: calc(17.5px);
+}
+
+.piano__key--black:nth-child(2) {
+  top: 0;
+  left: calc((17.5px * 2) + 17.5px);
+}
+
+.piano__key--black:nth-child(3) {
+  top: 0;
+  left: calc((35px * 3) + 17.5px);
+}
+
+.piano__key--black:nth-child(4) {
+  top: 0;
+  left: calc((35px * 4) + 17.5px);
+}
+
+.piano__key--black:nth-child(5) {
+  top: 0;
+  left: calc((35px * 5) + 17.5px);
+}
+
+.allowAudio {
+  display: none;
+}
+
+.button {
+  width: 100%;
+  position: relative;
+  border: 0;
+  margin: 0 10px;
+  padding: 5px;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  border-radius: 3px;
+  font-family: "Poppins", sans-serif;
+  color: #13315C;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.config {
+  position: relative;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  top: 5%;
+}
+
+.oscillator {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.oscillator label {
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+}
+
+.oscillator select {
+  position: relative;
+  border: 0;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  font-weight: bold;
+  color: #13315C;
+}
+
+.oscillator select option {
+  font-weight: bold;
+  color: #13315C;
+}
+
+@media only screen and (max-width: 768px) {
+  html, body {
+    overflow: hidden;
+  }
+  .piano {
+    top: 50%;
+    height: 250px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .allowAudio {
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+  }
+  .songs {
+    top: 20%;
+  }
+  .config {
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 5%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html, body {
+    overflow: hidden;
+  }
+  .piano {
+    top: 50%;
+    height: 250px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .allowAudio {
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+  }
+  .songs {
+    top: 15%;
+  }
+  header {
+    top: 18%;
+  }
+  .config {
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 5%;
+  }
+}

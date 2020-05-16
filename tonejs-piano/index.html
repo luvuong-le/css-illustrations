@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css" />
+    <title>CSS Tone JS Piano</title>
+</head>
+
+<body>
+    <header>
+        <span class="header__char">S</span>
+        <span class="header__char">Y</span>
+        <span class="header__char">N</span>
+        <span class="header__char">T</span>
+        <span class="header__char">H</span>
+        <span class="header__char">E</span>
+        <span class="header__char">S</span>
+        <span class="header__char">I</span>
+        <span class="header__char">Z</span>
+        <span class="header__char">E</span>
+        <span class="header__char">R</span>
+    </header>
+    <div class="meter"></div>
+    <div class="config">
+        <button class="allowAudio button">Allow Audio</button>
+        <div class="oscillator">
+            <label for="oscillatorOption">Oscillator:</label>
+            <select id="oscillatorOption">
+                <option value="sine">Sine</option>
+                <option value="square">Square</option>
+                <option value="triangle">Triangle</option>
+                <option value="sawtooth">Sawtooth</option>
+            </select>
+        </div>
+    </div>
+    <div class="songs">
+        <h1 class="title">Play a Song</h1>
+        <div class="songs__list">
+            <button data-song="maryLittleLamb" class="button song">Mary Had A Little Lamb</button>
+            <button data-song="yankeeDoodle" class="button song">Yankee Doodle</button>
+            <button data-song="twinkleStar" class="button song">Twinkle Star</button>
+        </div>
+    </div>
+    <div class="piano">
+        <div class="piano__octave">
+            <div data-note="C#3" class="piano__key piano__key--black"></div>
+            <div data-note="D#3" class="piano__key piano__key--black"></div>
+            <div data-note="F#3" class="piano__key piano__key--black"></div>
+            <div data-note="G#3" class="piano__key piano__key--black"></div>
+            <div data-note="A#3" class="piano__key piano__key--black"></div>
+            <div data-note="C3" class="piano__key piano__key--white"></div>
+            <div data-note="D3" class="piano__key piano__key--white"></div>
+            <div data-note="E3" class="piano__key piano__key--white"></div>
+            <div data-note="F3" class="piano__key piano__key--white"></div>
+            <div data-note="G3" class="piano__key piano__key--white"></div>
+            <div data-note="A3" class="piano__key piano__key--white"></div>
+            <div data-note="B3" class="piano__key piano__key--white"></div>
+        </div>
+        <div class="piano__octave">
+            <div data-note="C#4" class="piano__key piano__key--black"></div>
+            <div data-note="D#4" class="piano__key piano__key--black"></div>
+            <div data-note="F#4" class="piano__key piano__key--black"></div>
+            <div data-note="G#4" class="piano__key piano__key--black"></div>
+            <div data-note="A#4" class="piano__key piano__key--black"></div>
+            <div data-note="C4" class="piano__key piano__key--white"></div>
+            <div data-note="D4" class="piano__key piano__key--white"></div>
+            <div data-note="E4" class="piano__key piano__key--white"></div>
+            <div data-note="F4" class="piano__key piano__key--white"></div>
+            <div data-note="G4" class="piano__key piano__key--white"></div>
+            <div data-note="A4" class="piano__key piano__key--white"></div>
+            <div data-note="B4" class="piano__key piano__key--white"></div>
+        </div>
+        <div class="piano__octave">
+            <div data-note="C#5" class="piano__key piano__key--black"></div>
+            <div data-note="D#5" class="piano__key piano__key--black"></div>
+            <div data-note="F#5" class="piano__key piano__key--black"></div>
+            <div data-note="G#5" class="piano__key piano__key--black"></div>
+            <div data-note="A#5" class="piano__key piano__key--black"></div>
+            <div data-note="C5" class="piano__key piano__key--white"></div>
+            <div data-note="D5" class="piano__key piano__key--white"></div>
+            <div data-note="E5" class="piano__key piano__key--white"></div>
+            <div data-note="F5" class="piano__key piano__key--white"></div>
+            <div data-note="G5" class="piano__key piano__key--white"></div>
+            <div data-note="A5" class="piano__key piano__key--white"></div>
+            <div data-note="B5" class="piano__key piano__key--white"></div>
+        </div>
+    </div>
+
+    <script src="https://tonejs.github.io/build/Tone.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
