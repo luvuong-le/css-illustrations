@@ -1,0 +1,825 @@
+.sky {
+  width: 100%;
+  height: 50%;
+}
+
+.sun {
+  width: 300px;
+  height: 300px;
+  background: yellow;
+  top: -15%;
+  left: -5%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+          box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+  -webkit-animation: sun 2s infinite;
+          animation: sun 2s infinite;
+  z-index: 2;
+}
+
+.clouds {
+  width: 100%;
+  height: 100%;
+}
+
+.clouds .cloud:nth-child(1) {
+  left: 20%;
+  top: 80%;
+}
+
+.clouds .cloud:nth-child(2) {
+  top: 60%;
+}
+
+.clouds .cloud:nth-child(3) {
+  left: 70%;
+  top: 80%;
+}
+
+.cloud {
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 10em;
+  -webkit-box-shadow: 0 0 30px white, inset -10px -10px 30px #ccc;
+          box-shadow: 0 0 30px white, inset -10px -10px 30px #ccc;
+  -webkit-animation: cloud 2s infinite;
+          animation: cloud 2s infinite;
+  z-index: 2;
+}
+
+.cloud::before {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  top: -40px;
+  left: 50px;
+  -webkit-box-shadow: 0 0 50px white;
+          box-shadow: 0 0 50px white;
+}
+
+.cloud::after {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  top: -50px;
+  left: 120px;
+  -webkit-box-shadow: 0 0 50px white;
+          box-shadow: 0 0 50px white;
+}
+
+/* Wind */
+.wind {
+  width: 100%;
+  height: 100vh;
+}
+
+.wind__air-wave {
+  background-color: #d6d9f6;
+  height: 10px;
+  border-radius: 30%;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.wind__air-wave:nth-of-type(1) {
+  top: 11px;
+  left: 100%;
+  width: 290px;
+  opacity: 0.2;
+  -webkit-animation: wind 16s linear infinite;
+          animation: wind 16s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(2) {
+  top: 95px;
+  left: 100%;
+  width: 117px;
+  opacity: 0.5;
+  -webkit-animation: wind 11s linear infinite;
+          animation: wind 11s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(3) {
+  top: 1301px;
+  left: 100%;
+  width: 265px;
+  opacity: 0.1;
+  -webkit-animation: wind 7s linear infinite;
+          animation: wind 7s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(4) {
+  top: 667px;
+  left: 100%;
+  width: 258px;
+  opacity: 0.4;
+  -webkit-animation: wind 8s linear infinite;
+          animation: wind 8s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(5) {
+  top: 930px;
+  left: 100%;
+  width: 306px;
+  opacity: 0.5;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(6) {
+  top: 856px;
+  left: 100%;
+  width: 318px;
+  opacity: 0.5;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(7) {
+  top: 1302px;
+  left: 100%;
+  width: 186px;
+  opacity: 0.4;
+  -webkit-animation: wind 2s linear infinite;
+          animation: wind 2s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(8) {
+  top: 356px;
+  left: 100%;
+  width: 214px;
+  opacity: 0.2;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(9) {
+  top: 1288px;
+  left: 100%;
+  width: 112px;
+  opacity: 0.1;
+  -webkit-animation: wind 3s linear infinite;
+          animation: wind 3s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(10) {
+  top: 139px;
+  left: 100%;
+  width: 297px;
+  opacity: 0.2;
+  -webkit-animation: wind 13s linear infinite;
+          animation: wind 13s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(11) {
+  top: 1483px;
+  left: 100%;
+  width: 295px;
+  opacity: 0.5;
+  -webkit-animation: wind 14s linear infinite;
+          animation: wind 14s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(12) {
+  top: 560px;
+  left: 100%;
+  width: 115px;
+  opacity: 0.3;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(13) {
+  top: 285px;
+  left: 100%;
+  width: 141px;
+  opacity: 0.2;
+  -webkit-animation: wind 2s linear infinite;
+          animation: wind 2s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(14) {
+  top: 81px;
+  left: 100%;
+  width: 160px;
+  opacity: 0.2;
+  -webkit-animation: wind 5s linear infinite;
+          animation: wind 5s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(15) {
+  top: 1478px;
+  left: 100%;
+  width: 218px;
+  opacity: 0.5;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(16) {
+  top: 1037px;
+  left: 100%;
+  width: 191px;
+  opacity: 0.1;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(17) {
+  top: 460px;
+  left: 100%;
+  width: 158px;
+  opacity: 0.4;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(18) {
+  top: 506px;
+  left: 100%;
+  width: 75px;
+  opacity: 0.3;
+  -webkit-animation: wind 11s linear infinite;
+          animation: wind 11s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(19) {
+  top: 449px;
+  left: 100%;
+  width: 114px;
+  opacity: 0.4;
+  -webkit-animation: wind 15s linear infinite;
+          animation: wind 15s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(20) {
+  top: 1235px;
+  left: 100%;
+  width: 190px;
+  opacity: 0.4;
+  -webkit-animation: wind 5s linear infinite;
+          animation: wind 5s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(21) {
+  top: 173px;
+  left: 100%;
+  width: 59px;
+  opacity: 0.2;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(22) {
+  top: 1386px;
+  left: 100%;
+  width: 151px;
+  opacity: 0.5;
+  -webkit-animation: wind 13s linear infinite;
+          animation: wind 13s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(23) {
+  top: 1294px;
+  left: 100%;
+  width: 342px;
+  opacity: 0.5;
+  -webkit-animation: wind 15s linear infinite;
+          animation: wind 15s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(24) {
+  top: 915px;
+  left: 100%;
+  width: 254px;
+  opacity: 0.4;
+  -webkit-animation: wind 5s linear infinite;
+          animation: wind 5s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(25) {
+  top: 1125px;
+  left: 100%;
+  width: 323px;
+  opacity: 0.3;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(26) {
+  top: 254px;
+  left: 100%;
+  width: 227px;
+  opacity: 0.2;
+  -webkit-animation: wind 2s linear infinite;
+          animation: wind 2s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(27) {
+  top: 932px;
+  left: 100%;
+  width: 347px;
+  opacity: 0.3;
+  -webkit-animation: wind 8s linear infinite;
+          animation: wind 8s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(28) {
+  top: 626px;
+  left: 100%;
+  width: 307px;
+  opacity: 0.2;
+  -webkit-animation: wind 2s linear infinite;
+          animation: wind 2s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(29) {
+  top: 495px;
+  left: 100%;
+  width: 105px;
+  opacity: 0.4;
+  -webkit-animation: wind 9s linear infinite;
+          animation: wind 9s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(30) {
+  top: 1276px;
+  left: 100%;
+  width: 321px;
+  opacity: 0.1;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(31) {
+  top: 851px;
+  left: 100%;
+  width: 54px;
+  opacity: 0.1;
+  -webkit-animation: wind 3s linear infinite;
+          animation: wind 3s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(32) {
+  top: 1228px;
+  left: 100%;
+  width: 194px;
+  opacity: 0.2;
+  -webkit-animation: wind 6s linear infinite;
+          animation: wind 6s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(33) {
+  top: 332px;
+  left: 100%;
+  width: 198px;
+  opacity: 0.3;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(34) {
+  top: 623px;
+  left: 100%;
+  width: 257px;
+  opacity: 0.1;
+  -webkit-animation: wind 6s linear infinite;
+          animation: wind 6s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(35) {
+  top: 527px;
+  left: 100%;
+  width: 189px;
+  opacity: 0.2;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(36) {
+  top: 1249px;
+  left: 100%;
+  width: 281px;
+  opacity: 0.5;
+  -webkit-animation: wind 15s linear infinite;
+          animation: wind 15s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(37) {
+  top: 670px;
+  left: 100%;
+  width: 225px;
+  opacity: 0.1;
+  -webkit-animation: wind 13s linear infinite;
+          animation: wind 13s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(38) {
+  top: 1382px;
+  left: 100%;
+  width: 305px;
+  opacity: 0.2;
+  -webkit-animation: wind 7s linear infinite;
+          animation: wind 7s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(39) {
+  top: 894px;
+  left: 100%;
+  width: 113px;
+  opacity: 0.1;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(40) {
+  top: 1427px;
+  left: 100%;
+  width: 96px;
+  opacity: 0.4;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(41) {
+  top: 460px;
+  left: 100%;
+  width: 331px;
+  opacity: 0.4;
+  -webkit-animation: wind 15s linear infinite;
+          animation: wind 15s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(42) {
+  top: 93px;
+  left: 100%;
+  width: 341px;
+  opacity: 0.1;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(43) {
+  top: 1446px;
+  left: 100%;
+  width: 146px;
+  opacity: 0.1;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(44) {
+  top: 105px;
+  left: 100%;
+  width: 150px;
+  opacity: 0.4;
+  -webkit-animation: wind 9s linear infinite;
+          animation: wind 9s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(45) {
+  top: 1312px;
+  left: 100%;
+  width: 124px;
+  opacity: 0.3;
+  -webkit-animation: wind 6s linear infinite;
+          animation: wind 6s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(46) {
+  top: 858px;
+  left: 100%;
+  width: 243px;
+  opacity: 0.1;
+  -webkit-animation: wind 3s linear infinite;
+          animation: wind 3s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(47) {
+  top: 201px;
+  left: 100%;
+  width: 307px;
+  opacity: 0.2;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(48) {
+  top: 538px;
+  left: 100%;
+  width: 338px;
+  opacity: 0.2;
+  -webkit-animation: wind 4s linear infinite;
+          animation: wind 4s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(49) {
+  top: 353px;
+  left: 100%;
+  width: 77px;
+  opacity: 0.4;
+  -webkit-animation: wind 9s linear infinite;
+          animation: wind 9s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(50) {
+  top: 473px;
+  left: 100%;
+  width: 208px;
+  opacity: 0.4;
+  -webkit-animation: wind 11s linear infinite;
+          animation: wind 11s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(51) {
+  top: 1469px;
+  left: 100%;
+  width: 311px;
+  opacity: 0.5;
+  -webkit-animation: wind 8s linear infinite;
+          animation: wind 8s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(52) {
+  top: 1276px;
+  left: 100%;
+  width: 239px;
+  opacity: 0.2;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(53) {
+  top: 210px;
+  left: 100%;
+  width: 161px;
+  opacity: 0.3;
+  -webkit-animation: wind 10s linear infinite;
+          animation: wind 10s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(54) {
+  top: 216px;
+  left: 100%;
+  width: 251px;
+  opacity: 0.3;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(55) {
+  top: 1164px;
+  left: 100%;
+  width: 87px;
+  opacity: 0.3;
+  -webkit-animation: wind 2s linear infinite;
+          animation: wind 2s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(56) {
+  top: 339px;
+  left: 100%;
+  width: 51px;
+  opacity: 0.5;
+  -webkit-animation: wind 2s linear infinite;
+          animation: wind 2s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(57) {
+  top: 650px;
+  left: 100%;
+  width: 73px;
+  opacity: 0.1;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(58) {
+  top: 221px;
+  left: 100%;
+  width: 295px;
+  opacity: 0.2;
+  -webkit-animation: wind 3s linear infinite;
+          animation: wind 3s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(59) {
+  top: 1356px;
+  left: 100%;
+  width: 245px;
+  opacity: 0.5;
+  -webkit-animation: wind 3s linear infinite;
+          animation: wind 3s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(60) {
+  top: 224px;
+  left: 100%;
+  width: 88px;
+  opacity: 0.3;
+  -webkit-animation: wind 8s linear infinite;
+          animation: wind 8s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(61) {
+  top: 503px;
+  left: 100%;
+  width: 312px;
+  opacity: 0.1;
+  -webkit-animation: wind 9s linear infinite;
+          animation: wind 9s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(62) {
+  top: 636px;
+  left: 100%;
+  width: 233px;
+  opacity: 0.4;
+  -webkit-animation: wind 7s linear infinite;
+          animation: wind 7s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(63) {
+  top: 885px;
+  left: 100%;
+  width: 199px;
+  opacity: 0.3;
+  -webkit-animation: wind 9s linear infinite;
+          animation: wind 9s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(64) {
+  top: 558px;
+  left: 100%;
+  width: 350px;
+  opacity: 0.4;
+  -webkit-animation: wind 13s linear infinite;
+          animation: wind 13s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(65) {
+  top: 684px;
+  left: 100%;
+  width: 209px;
+  opacity: 0.4;
+  -webkit-animation: wind 11s linear infinite;
+          animation: wind 11s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(66) {
+  top: 347px;
+  left: 100%;
+  width: 143px;
+  opacity: 0.4;
+  -webkit-animation: wind 8s linear infinite;
+          animation: wind 8s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(67) {
+  top: 361px;
+  left: 100%;
+  width: 221px;
+  opacity: 0.2;
+  -webkit-animation: wind 13s linear infinite;
+          animation: wind 13s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(68) {
+  top: 769px;
+  left: 100%;
+  width: 131px;
+  opacity: 0.2;
+  -webkit-animation: wind 6s linear infinite;
+          animation: wind 6s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(69) {
+  top: 460px;
+  left: 100%;
+  width: 239px;
+  opacity: 0.2;
+  -webkit-animation: wind 6s linear infinite;
+          animation: wind 6s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(70) {
+  top: 511px;
+  left: 100%;
+  width: 280px;
+  opacity: 0.4;
+  -webkit-animation: wind 14s linear infinite;
+          animation: wind 14s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(71) {
+  top: 788px;
+  left: 100%;
+  width: 203px;
+  opacity: 0.4;
+  -webkit-animation: wind 12s linear infinite;
+          animation: wind 12s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(72) {
+  top: 557px;
+  left: 100%;
+  width: 90px;
+  opacity: 0.4;
+  -webkit-animation: wind 7s linear infinite;
+          animation: wind 7s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(73) {
+  top: 1035px;
+  left: 100%;
+  width: 300px;
+  opacity: 0.2;
+  -webkit-animation: wind 14s linear infinite;
+          animation: wind 14s linear infinite;
+}
+
+.wind__air-wave:nth-of-type(74) {
+  top: 1322px;
+  left: 100%;
+  width: 334px;
+  opacity: 0.3;
+  -webkit-animation: wind 3s linear infinite;
+          animation: wind 3s linear infinite;
+}
+
+@-webkit-keyframes wind {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+@keyframes wind {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+@-webkit-keyframes sun {
+  0% {
+    -webkit-box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+            box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 500px yellow, inset -10px -10px 30px #ccc;
+            box-shadow: 0 0 500px yellow, inset -10px -10px 30px #ccc;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+            box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+  }
+}
+
+@keyframes sun {
+  0% {
+    -webkit-box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+            box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 500px yellow, inset -10px -10px 30px #ccc;
+            box-shadow: 0 0 500px yellow, inset -10px -10px 30px #ccc;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+            box-shadow: 0 0 30px yellow, inset -10px -10px 30px #ccc;
+  }
+}
+
+@-webkit-keyframes cloud {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -50%) skew(0);
+            transform: translate(-50%, -50%) skew(0);
+  }
+  50% {
+    -webkit-transform: translate(-52%, -50%) skew(4deg);
+            transform: translate(-52%, -50%) skew(4deg);
+  }
+}
+
+@keyframes cloud {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -50%) skew(0);
+            transform: translate(-50%, -50%) skew(0);
+  }
+  50% {
+    -webkit-transform: translate(-52%, -50%) skew(4deg);
+            transform: translate(-52%, -50%) skew(4deg);
+  }
+}

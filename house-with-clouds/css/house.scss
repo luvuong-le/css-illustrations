@@ -1,0 +1,276 @@
+$house-primary: #FFCD3B;
+$house-roof-primary: #DB7670;
+$house-roof-secondary: #EC3E35;
+$house-doorstep:#A1A1A1; 
+$house-window-square: #4FC3F7;
+
+/* Original House Reference: https://codepen.io/sidtheangel/pen/JxgKpK
+   * Codepen helpful in showing structure of a house example
+   * Extended and additions made to suit project
+*/
+
+.house {
+    width: auto;
+    height: auto;
+    z-index: 3;
+
+    @include center;
+    top: 55%;
+
+    &__front {
+        height: 200px;
+        width: 200px;
+        @include center;
+    }
+
+    &__wall {
+        width: 200px;
+        height: 150px;
+        background:$house-primary;
+        border-left: 10px solid darken($house-primary, 15%);
+        border-right: 10px solid darken($house-primary, 15%);
+    }
+
+    &__door {
+        height: 80px;
+        width: 50px;
+        border: 5px solid $house-roof-secondary;
+        background: $house-roof-primary;
+        bottom: 13px;
+        left: 33%;
+        transform: translateX(-50%);
+
+        &-knob {
+            width: 15px;
+            height: 15px;
+            background: $house-primary;
+            border-radius: 50%;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid $house-roof-secondary;
+            z-index: 4;
+        }
+
+        &-upperframe {
+            width: 85%;
+            height: 30px;
+            margin: 3px;
+            border-radius: 3px;
+            background: $house-roof-secondary;
+        }
+
+        &-lowerframe {
+            width: 85%;
+            height: 30px;
+            margin: 3px;
+            bottom: 0;
+            border-radius: 3px;
+            background: $house-roof-secondary;
+        }
+
+        &-step-1 {
+            width: 80px;
+            height: 13px;
+            background: $house-doorstep;
+            bottom: 0;
+            left: 20px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border: 3px solid darken($house-doorstep, 10%)
+        }
+
+        &-step-2 {
+            width: 100px;
+            height: 13px;
+            background: $house-doorstep;
+            bottom: -10px;
+            left: 10px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border: 3px solid darken($house-doorstep, 10%)
+        }
+    }
+
+    &__sidewall {
+        width: 200px;
+        height: 150px;
+        left: -76px;
+        background: rgba($house-primary, 0.85);
+    }
+
+    &__roof {
+        width: 77px;
+        height: 100px;
+        top: 0;
+        background: rgba($house-roof-secondary, 0.85);
+        -webkit-transform: skew(-37deg) translateX(40%);
+        transform: skew(-45deg) translateX(265%);
+        left: -231px;
+    }
+
+    &__triangle {
+        position: relative;
+        border-bottom: 100px solid $house-roof-secondary;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+    }
+
+    &__ground {
+        width: 500px;
+        height: 50px;
+        background: rgba(240, 240, 240, 0.6);
+        bottom: -35%;
+        left: -50%;
+        transform: translate(-16%);
+        border-radius: 100%;
+        z-index: -1;
+    }
+
+    &__window {
+
+        &-upper {
+            width: 48px;
+            height: 48px;
+            background: #ffffff;
+            border-radius: 5px;
+            border: 5px solid darken($house-primary, 15%);
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5px;
+
+            & .house__window-square:nth-child(1) {
+                background-color: $house-window-square;
+                left: 4px;
+                top: 5px;
+                width: 13px;
+                height: 13px;
+            }
+
+            & .house__window-square:nth-child(2) {
+                background-color: $house-window-square;
+                left: 20px;
+                top: 5px;
+                width: 13px;
+                height: 13px;
+            }
+
+            & .house__window-square:nth-child(3) {
+                background-color: $house-window-square;
+                left: 4px;
+                top: 20px;
+                width: 13px;
+                height: 13px;
+            }
+            
+            & .house__window-square:nth-child(4) {
+                background-color: $house-window-square;
+                left: 20px;
+                top: 20px;
+                width: 13px;
+                height: 13px;
+            }
+        }
+
+        &-side {
+            width: 55px;
+            height: 65px;
+            background: #ffffff;
+            border-radius: 5px;
+            border: 5px solid darken($house-primary, 15%);
+            left: 75%;
+            transform: translateX(-50%);
+            top: 40%;
+
+            & .house__window-square:nth-child(1) {
+                background-color: $house-window-square;
+                left: 5px;
+                top: 5px;
+            }
+
+            & .house__window-square:nth-child(2) {
+                background-color: $house-window-square;
+                left: 25px;
+                top: 5px;
+            }
+
+            & .house__window-square:nth-child(3) {
+                background-color: $house-window-square;
+                left: 5px;
+                top: 25px;
+            }
+
+            & .house__window-square:nth-child(4) {
+                background-color: $house-window-square;
+                left: 25px;
+                top: 25px;
+            }
+
+            & .house__window-square:nth-child(5) {
+                background-color: $house-window-square;
+                left: 5px;
+                top: 45px;
+            }
+
+            & .house__window-square:nth-child(6) {
+                background-color: $house-window-square;
+                left: 25px;
+                top: 45px;
+            }
+
+            &::after {
+                width: 120%;
+                height: 10px;
+                background: brown;
+                transform: translateX(-5px);
+                bottom: -10px;
+                border-radius: 3px;
+            }
+        }
+
+        &-square {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            background: blue;
+        }
+    }
+
+    &__garage {
+        height: 200px;
+        width: 200px;
+        @include center;
+
+        &-roof {
+            width: 50px;
+            height: 30px;
+            top: 80%;
+            left: -62%;
+            background: $house-roof-secondary;
+            transform: skewX(-47deg) translateX(32%);
+        }
+
+        &-triangle {
+            top: 80%;
+            left: -37%;
+            border-bottom: 30px solid $house-primary;
+            border-left: 32px solid transparent;
+        }
+
+        &-wall {
+            width: 32px;
+            height: 60px;
+            background: $house-primary;
+            top: 95%;
+            left: -37%;
+        }
+
+        &-sidewall {
+            width: 48px;
+            height: 60px;
+            background: rgba($house-primary, 0.85);
+            top: 95%;
+            left: -61%;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.house__front {
+  height: 200px;
+  width: 200px;
+}
+
+.house__triangle {
+  border-bottom: 80px solid white;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+}

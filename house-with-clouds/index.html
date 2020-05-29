@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/master.css" />
+    <title>House and Cloud CSS Illustrations</title>
+</head>
+
+<body>
+    <div class="sky">
+        <div class="sun"></div>
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+    </div>
+    <div class="wind"></div>
+    <div class="house">
+        <div class="house__front">
+            <div class="house__roof"></div>
+            <div class="house__triangle"></div>
+            <div class="house__sidewall"></div>
+            <div class="house__wall">
+                <div class="house__door">
+                    <div class="house__door-knob"></div>
+                    <div class="house__door-upperframe"></div>
+                    <div class="house__door-lowerframe"></div>
+                </div>
+                <div class="house__door-step-1"></div>
+                <div class="house__door-step-2"></div>
+                <div class="house__window-upper">
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                </div>
+                <div class="house__window-side">
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                    <div class="house__window-square"></div>
+                </div>
+            </div>
+            <!-- <div class="house__ground"></div> -->
+        </div>
+        <div class="house__garage">
+            <div class="house__garage-roof"></div>
+            <div class="house__garage-triangle"></div>
+            <div class="house__garage-wall"></div>
+            <div class="house__garage-sidewall"></div>
+        </div>
+    </div>
+    <div class="grass">
+        <div class="grass__bush"></div>
+        <div class="grass__bush"></div>
+        <div class="grass-item"></div>
+    </div>
+
+    <script>
+        const wind = document.querySelector('.wind');
+
+        for (let i = 0; i <= 75; i++) {
+            let airWave = document.createElement('div');
+            airWave.classList.add("wind__air-wave");
+            wind.appendChild(airWave);
+        }
+    </script>
+</body>
+
+</html>

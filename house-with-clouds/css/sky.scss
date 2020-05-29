@@ -1,0 +1,129 @@
+$sun-primary: yellow;
+
+.sky {
+    width: 100%;
+    height: 50%;
+}
+
+.sun {
+    width: 300px;
+    height: 300px;
+    background: $sun-primary;
+    top: -15%;
+    left: -5%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px #ccc;
+    animation: sun 2s infinite;
+    z-index: 2;
+}
+
+.clouds {
+    width: 100%;
+    height: 100%;
+
+    & .cloud:nth-child(1) {
+        left: 20%;
+        top: 80%;
+    }
+
+    & .cloud:nth-child(2) {
+        top: 60%;
+    }
+
+    & .cloud:nth-child(3) {
+        left: 70%;
+        top: 80%;
+    }
+}
+
+.cloud {
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10em;
+    box-shadow: 0 0 30px white, inset -10px -10px 30px #ccc;
+    animation: cloud 2s infinite;
+    z-index: 2;
+
+    &::before {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+        top: -40px;
+        left: 50px;
+        box-shadow: 0 0 50px white;
+    }
+
+    &::after {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: white;
+        top: -50px;
+        left: 120px;
+        box-shadow: 0 0 50px white;
+    }
+}
+
+/* Wind */
+.wind {
+    width: 100%;
+    height: 100vh;
+
+    &__air-wave {
+        background-color: #d6d9f6;
+        height: 10px;
+        border-radius: 30%;
+        opacity: 0.2;
+        z-index: 1;
+    }
+}
+
+@for $i from 1 to 75 {
+    $size: random(300) + 50px;
+    $delay: random(15) + 1s;
+    
+    .wind__air-wave:nth-of-type(#{$i}) {
+        top: random(1500) + px;
+        left: 100%;
+        width: $size;
+        opacity: random(5) * 0.1;
+        animation: wind $delay linear infinite;
+    }
+}
+
+@keyframes wind {
+    0% {
+        left: 100%;
+        // transform: translateX(0);
+    }
+    100% {
+        left: -50%;
+        // transform: translateX(-100%);
+    }
+}
+
+@keyframes sun {
+    0% {
+        box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px #ccc;
+    }
+    50% {
+        box-shadow: 0 0 500px $sun-primary, inset -10px -10px 30px #ccc;
+    }
+    100% {
+        box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px #ccc;
+    }
+}
+
+@keyframes cloud {
+    0%, 100% {
+        transform: translate(-50%, -50%) skew(0);
+    }
+    50% {
+        transform: translate(-52%, -50%) skew(4deg);
+    }
+}
