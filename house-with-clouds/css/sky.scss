@@ -12,7 +12,7 @@ $sun-primary: yellow;
     top: -15%;
     left: -5%;
     border-radius: 50%;
-    box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px #ccc;
+    box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px darken($sun-primary, 15%);
     animation: sun 2s infinite;
     z-index: 2;
 }
@@ -109,13 +109,13 @@ $sun-primary: yellow;
 
 @keyframes sun {
     0% {
-        box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px #ccc;
+        box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px darken($sun-primary, 15%);
     }
     50% {
-        box-shadow: 0 0 500px $sun-primary, inset -10px -10px 30px #ccc;
+        box-shadow: 0 0 500px $sun-primary, inset -10px -10px 30px darken($sun-primary, 15%);
     }
     100% {
-        box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px #ccc;
+        box-shadow: 0 0 30px $sun-primary, inset -10px -10px 30px darken($sun-primary, 15%);
     }
 }
 
