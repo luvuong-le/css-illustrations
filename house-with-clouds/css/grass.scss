@@ -11,12 +11,6 @@ $grass-bush: #97C861;
     box-shadow: 0 0 30px $grass-primary;
     z-index: 2;
 
-    &-item {
-        width: 5px;
-        height: 15px;
-        background: $grass-primary;
-    }
-
     &__bush {
         width: 300px;
         height: 100px;

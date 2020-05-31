@@ -85,25 +85,23 @@ $sun-primary: yellow;
 
 @for $i from 1 to 75 {
     $size: random(300) + 50px;
-    $delay: random(15) + 1s;
+    $duration: random(15) + 1s;
     
     .wind__air-wave:nth-of-type(#{$i}) {
         top: random(1500) + px;
         left: 100%;
         width: $size;
         opacity: random(5) * 0.1;
-        animation: wind $delay linear infinite;
+        animation: wind $duration linear infinite;
     }
 }
 
 @keyframes wind {
     0% {
-        left: 100%;
-        // transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
-        left: -50%;
-        // transform: translateX(-100%);
+        transform: translateX(-3000px);
     }
 }
 
