@@ -1,0 +1,28 @@
+/* Set a background styles */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #6f8db8;
+    overflow: hidden;
+}
+
+/* Set border box sizing */
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* For every element set box sizing and font family */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    position: absolute;
+}
+
+*:before, *:after {
+    content: '';
+    z-index: 1;
+}
