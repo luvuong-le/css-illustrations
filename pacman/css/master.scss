@@ -1,0 +1,324 @@
+@import "base.scss";
+@import "mixin.scss";
+
+$pacman-body: yellow;
+$pacman-eyeball: #083D84;
+
+@font-face {
+    font-family: pacman;
+    src: url(../assets/PAC-FONT.TTF);
+}
+
+.heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 8em;
+    text-align: center;
+    width: 100%;
+    margin-top: .3em;
+
+    &__char {
+        font-family: pacman;
+        color: black;
+        position: relative;
+        letter-spacing: -10px;
+        display: inline-block;
+    }
+
+    &--red {
+        // -webkit-text-stroke: 2px red;
+        // border: 1px solid red;
+        text-shadow:    -1px -1px 0 red,  
+                        1px -1px 0 red,
+                        -1px 1px 0 red,
+                        1px 1px 0 red;
+    }
+
+    &--blue {
+        // border: 1px solid blue;
+        text-shadow:    -1px -1px 0 blue,  
+                1px -1px 0 blue,
+                -1px 1px 0 blue,
+                1px 1px 0 blue;
+    }
+
+    &--green {
+        // border: 1px solid green;
+        text-shadow:    -1px -1px 0 green,  
+                1px -1px 0 green,
+                -1px 1px 0 green,
+                1px 1px 0 green;
+    }
+
+    &--yellow {
+        // border: 1px solid yellow;
+        text-shadow:    -1px -1px 0 yellow,  
+                1px -1px 0 yellow,
+                -1px 1px 0 yellow,
+                1px 1px 0 yellow;
+    }
+}
+
+/* Lane */
+.lane {
+    width: 100%;
+    height: 400px;
+    background: transparent;
+    @include center;
+    border-top: 15px double blue;
+    border-bottom: 15px double blue;
+} 
+
+/* Pacman */
+.pacman {
+    width: 250px;
+    height: 250px;
+    @include center;
+
+    &__body {
+        width: 100%;
+        height: 50%;
+        background: $pacman-body;
+
+        &--top {
+            border-top-left-radius: 100% 200%;
+            border-top-right-radius: 100% 200%;
+            top: 0;
+            transform: rotate(-25deg);
+            animation: eatTop 1s ease infinite;
+
+            &::after {
+                width: 30px;
+                height: 30px;
+                background: black;
+                border-radius: 50%;
+                top: 55%;
+                right: 60px;
+            }
+        }
+
+        &--bottom {
+            border-bottom-left-radius: 100% 200%;
+            border-bottom-right-radius: 100% 200%;
+            bottom: 0;
+            transform: rotate(25deg);
+            animation: eatBottom 1s ease infinite;
+        }
+    }
+
+    &__pellets {
+        width: 300px;
+        height: 200px;
+        top: 50%;
+        left: 55%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: pellets 1s ease infinite;
+
+        @for $i from 1 to 12 {
+            $translateX: (100 * $i) + 0px; 
+
+            &-piece {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: $pacman-body;
+                box-shadow: 0px 0px 30px $pacman-body;
+
+                &:nth-child(#{$i}) {
+                    transform: translateX($translateX);
+                }
+            }
+        }
+    }
+}
+
+.ghost {
+    width: 230px;
+    height: 250px;
+    @include center;
+    left: 20%;
+    background: red;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    &:nth-child(1) {
+        left: 8%;
+        background: cyan;
+    }
+
+    &:nth-child(2) {
+        left: 21%;
+        background: pink;
+    }
+
+    &:nth-child(3) {
+        left: 34%;
+    }
+
+    &__eyes {
+        width: 100%;
+        height: 50px;
+        top: 20%;
+    }
+
+    &__eye {
+        &--left {
+            width: 70px;
+            height: 90px;
+            border-radius: 100%;
+            background: white;
+
+            left: 50px;
+
+            &::after {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background: $pacman-eyeball;
+                top: 30px;
+                left: 30px;
+            }
+        }
+
+        &--right {
+            width: 70px;
+            height: 90px;
+            border-radius: 100%;
+            background: white;
+
+            right: 30px;
+
+            &::after {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background: $pacman-eyeball;
+                top: 30px;
+                left: 30px;
+            }
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+
+        &-triangle {
+            width: 0; 
+            height: 0; 
+            bottom: 0;
+            left: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            
+            border-bottom: 30px solid black;
+
+            animation: ghostLegForward 1s ease infinite;
+        }
+
+        &::before {
+            width: 0; 
+            height: 0; 
+            bottom: 0;
+            left: 75px;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            
+            border-bottom: 30px solid black;
+            animation: ghostLegBackward 1s ease infinite;
+        }
+
+        &::after {
+            width: 0; 
+            height: 0; 
+            bottom: 0;
+            left: 150px;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            
+            border-bottom: 30px solid black;
+            animation: ghostLegForward 1s ease infinite;
+        }
+    }
+}
+
+@keyframes eatTop {
+    0% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes eatBottom {
+    0% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes ghostLegForward {
+    0% {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        
+        border-bottom: 30px solid black;
+    }
+    50% {
+        border-left: 50px solid transparent;
+        border-right: 40px solid transparent;
+        
+        border-bottom: 30px solid black;
+    }
+    100% {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        
+        border-bottom: 30px solid black;
+    }
+}
+@keyframes ghostLegBackward {
+    0% {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        
+        border-bottom: 30px solid black;
+    }
+    50% {
+        border-left: 35px solid transparent;
+        border-right: 40px solid transparent;
+        
+        border-bottom: 30px solid black;
+    }
+    100% {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        
+        border-bottom: 30px solid black;
+    }
+}
+
+@keyframes pellets {
+    0% {
+        transform: translate(-170px, -50%);
+    }
+    50% {
+        transform: translate(-170px, -50%);
+    }
+        100% {
+        transform: translate(-270px, -50%);
+    }
+}
