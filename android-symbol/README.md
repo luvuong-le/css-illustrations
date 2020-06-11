@@ -1,4 +1,4 @@
-# 🏠 CSS House With Clouds ☁️
+# 🤖 CSS Android 🤖
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -13,19 +13,17 @@
 
 ## About
 
-An Illustration of a house on a hill with clouds and sun. The wind is blowing past making the clouds and bushes move.
+CSS Illustration of a analog watch and stopwatch
 
 ## Demo
 
-![CSS Cloud](../assets/house-cloud.gif)
+![CSS Cloud](../assets/android.gif)
 
 ## Notes
 
 > **Responsive**: False
 
 > **Refactored Code**: False
-
-Credit goes to [TheMindSpeaks - YT Video](https://www.youtube.com/watch?v=vbcddulL-YM) for the great tutorial on the house structure
 
 ## Contribute
 

@@ -8,6 +8,7 @@
 
 - [About](#about)
 - [Demo](#demo)
+- [Notes](#notes)
 - [Contribute](#contribute)
 
 ## About
