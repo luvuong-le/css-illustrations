@@ -1,0 +1,177 @@
+@import "mixins.scss";
+@import "base.scss";
+
+$watch-primary: rgba($color: #000000, $alpha: 0.9);
+$watch-secondary: white;
+$watch-ring: linear-gradient(90deg, rgba(204,204,204,1) 0%, rgba(237,237,237,1) 100%, rgba(255,255,255,1) 100%);
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include center;
+}
+
+.watch {
+    width: 250px;
+    height: 250px;
+    background: black;
+    border: 10px ridge white;
+    box-shadow: 0 0 10px white;
+    border-radius: 50%;
+    top: 40%;
+    left: 45%;
+
+    &:nth-child(1) {
+        left: 25%;
+    }
+
+    &:nth-child(2) {
+        left: 60%;
+    }
+
+    &::before {
+        width: 120px;
+        height: 250px;
+        background: $watch-primary;
+        box-shadow: 0 0 10px $watch-primary;
+        top: -80%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    &::after {
+        width: 120px;
+        height: 250px;
+        background: $watch-primary;
+        box-shadow: 0 0 10px $watch-primary;
+        bottom: -80%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    &__face {
+        width: 100%;
+        height: 100%;
+        background: black;
+        border-radius: 50%;
+
+        &-stopwatch {
+            width: 100%;
+            height: 100%;
+
+            & span {
+                display: block;
+                color: white;
+                font-size: 2em;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                top: 40%;
+                left: 10%;
+            }
+        }
+
+        &-center {
+            width: 5px;
+            height: 5px;
+            background: white;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-hour, &-min, &-sec {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        &-hour {
+            &-hand {
+                width: 6px;
+                height: 50px;
+                background: white;
+                top: 29%;
+                left: 49%;
+                transform-origin: center bottom;
+                border-radius: 10px;
+                animation: rotate 43200s infinite steps(60);
+                z-index: 2;
+            }
+
+        }
+
+        &-min {
+            &-hand {
+                width: 6px;
+                height: 80px;
+                background: grey;
+                top: 16%;
+                left: 48%;
+                border-radius: 10px;
+                transform-origin: center bottom;
+                transform: rotate(35deg);
+                animation: rotate 3600s infinite steps(60);
+            }
+        }
+
+        &-sec {
+            &-hand {
+                width: 6px;
+                height: 100px;
+                background: rgba(255, 0, 0, 0.8);
+                top: 8%;
+                left: 49%;
+                border-radius: 10px;
+                transform-origin: center bottom;
+                animation: rotate 60s infinite steps(60);
+            }
+        }
+    }
+
+    &__btns {
+        height: 100%;
+        width: 100%;
+
+        &--left {
+            width: 20px;
+            height: 30px;
+            background: $watch-ring;
+            right: -10px;
+            top: 50px;
+            z-index: -1;
+            border-radius: 50%;
+            transform: rotate(-18deg);
+            transition: transform .3s ease;
+        }
+
+        &--right {
+            width: 20px;
+            height: 30px;
+            background: $watch-ring;
+            right: -12px;
+            top: 150px;
+            z-index: -1;
+            border-radius: 50%;
+            transform: rotate(20deg);
+            transition: transform .3s ease;
+        }
+    }
+}
+
+.paused {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused; 
+    animation-play-state: paused
+}
+
+@keyframes rotate {
+    100% {
+    transform: rotate(360deg);
+    }
+}

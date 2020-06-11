@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css">
+    <title>CSS Watch</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="normalWatch" class="watch">
+            <div class="watch__face">
+                <div class="watch__face-hour">
+                    <div class="watch__face-hand watch__face-hour-hand"></div>
+                </div>
+                <div class="watch__face-min">
+                    <div class="watch__face-hand watch__face-min-hand"></div>
+                </div>
+                <div class="watch__face-sec">
+                    <div class="watch__face-hand watch__face-sec-hand"></div>
+                </div>
+                <div class="watch__face-hand watch__face-center"></div>
+            </div>
+            <div class="watch__btns">
+                <div class="watch__btns--left"></div>
+                <div class="watch__btns--right"></div>
+            </div>
+        </div>
+
+        <div id="stopWatch" class="watch">
+            <div class="watch__face">
+                <div class="watch__face-stopwatch">
+                    <span><time>00:00:00:00</time></span>
+                </div>
+            </div>
+            <div class="watch__btns">
+                <div class="watch__btns--left"></div>
+                <div class="watch__btns--right"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const start = document.querySelector(".watch__btns--left");
+        const stop = document.querySelector(".watch__btns--right");
+        const watchHands = document.querySelectorAll('.watch__face-hand')
+
+        stop.addEventListener("click", () => {
+            performClickTransition(stop);
+            watchHands.forEach(hand => {
+                hand.classList.add('paused');
+            });
+        });
+
+        start.addEventListener("click", () => {
+            performClickTransition(start);
+            watchHands.forEach(hand => {
+                hand.classList.remove('paused');
+            });
+        });
+
+        function performClickTransition(btn) {
+            let initial = btn.style.transform;
+
+            btn.style.transform = "translate(-5px, 1px)";
+
+            setTimeout(() => {
+                btn.style.transform = initial;
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>
