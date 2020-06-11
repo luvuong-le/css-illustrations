@@ -9,6 +9,7 @@
 - [About](#about)
 - [Demo](#demo)
 - [Notes](#notes)
+- [Improvements](#improvements)
 - [Contribute](#contribute)
 
 ## About
@@ -26,6 +27,14 @@ CSS Illustration of a analog watch and stopwatch
 > **Refactored Code**: False
 
 Credit goes to [CSS Animation Rocks - Clocks Tutorial](https://cssanimation.rocks/clocks/) for the great tutorial on css watch face rotation
+
+## Improvements
+
+Some improvements that could be made:
+
+- Create the watch holes for the wrist
+- Use JS in order to set the analog to the accurate date
+- use JS to control the stopwatch and make it play for real
 
 ## Contribute
 
