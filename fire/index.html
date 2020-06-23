@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>CSS Illustration Fire</title>
+</head>
+
+<body>
+    <div class="bonfire">
+        <div class="sparks"></div>
+        <div class="fire"></div>
+        <div class="wood"></div>
+    </div>
+
+    <script>
+        const sparks = document.querySelector('.sparks');
+
+        for (let i = 0; i <= 10; i++) {
+            let fireSpark = document.createElement('div');
+            fireSpark.classList.add("sparks__fire");
+            sparks.appendChild(fireSpark);
+        }
+    </script>
+</body>
+
+</html>

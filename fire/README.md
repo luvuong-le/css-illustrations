@@ -1,5 +1,4 @@
-# 🤖 CSS Android 🤖
-
+# 🔥 CSS Illustration Bonfire 🔥
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -13,17 +12,17 @@
 
 ## About
 
-CSS Illustration of a analog watch and stopwatch
+CSS Illustration of bonfire
 
 ## Demo
 
-![CSS Android](../assets/android.gif)
+![CSS Bonfire](../assets/bonfire.gif)
 
 ## Notes
 
 > **Responsive**: False
 
-> **Refactored Code**: False
+> **Refactored Code**: True
 
 ## Contribute
 
