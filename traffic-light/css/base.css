@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #324efd;
+  overflow: hidden;
+}
+
+/* For every element set positioning */
+*,
+*::before,
+*::after {
+  position: absolute;
+}
+
+/* Set content and z index */
+*::before,
+*::after {
+  content: '';
+  z-index: 1;
+}

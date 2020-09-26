@@ -1,0 +1,186 @@
+.traffic-light {
+  width: 250px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.traffic-light__body {
+  width: 100%;
+  height: 100%;
+  background: #222;
+  border: 5px solid white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 50px #222;
+          box-shadow: 0px 0px 50px #222;
+  z-index: 2;
+}
+
+.traffic-light__blink {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(#333, #443 5px);
+}
+
+.traffic-light__blink--red {
+  background: red;
+  -webkit-box-shadow: 0px 0px 50px red;
+          box-shadow: 0px 0px 50px red;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: lightUpRed 3s infinite;
+          animation: lightUpRed 3s infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+
+.traffic-light__blink--yellow {
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: lightUpYellow 3s infinite;
+          animation: lightUpYellow 3s infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+
+.traffic-light__blink--green {
+  top: 65%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: lightUpGreen 3s infinite;
+          animation: lightUpGreen 3s infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+
+.traffic-light__pole {
+  content: '';
+  z-index: 1;
+  height: 300px;
+  width: 100px;
+  background: #fffddd;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  bottom: -60%;
+  left: 50%;
+  -webkit-box-shadow: 0px 0px 20px white;
+          box-shadow: 0px 0px 20px white;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@-webkit-keyframes lightUpRed {
+  0% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    background: red;
+    -webkit-box-shadow: 0px 0px 50px red;
+            box-shadow: 0px 0px 50px red;
+  }
+  100% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@keyframes lightUpRed {
+  0% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    background: red;
+    -webkit-box-shadow: 0px 0px 50px red;
+            box-shadow: 0px 0px 50px red;
+  }
+  100% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@-webkit-keyframes lightUpYellow {
+  0% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    background: yellow;
+    -webkit-box-shadow: 0px 0px 50px yellow;
+            box-shadow: 0px 0px 50px yellow;
+  }
+  100% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@keyframes lightUpYellow {
+  0% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    background: yellow;
+    -webkit-box-shadow: 0px 0px 50px yellow;
+            box-shadow: 0px 0px 50px yellow;
+  }
+  100% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@-webkit-keyframes lightUpGreen {
+  0% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    background: green;
+    -webkit-box-shadow: 0px 0px 50px green;
+            box-shadow: 0px 0px 50px green;
+  }
+  100% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@keyframes lightUpGreen {
+  0% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    background: green;
+    -webkit-box-shadow: 0px 0px 50px green;
+            box-shadow: 0px 0px 50px green;
+  }
+  100% {
+    background: repeating-linear-gradient(#333, #443 5px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}

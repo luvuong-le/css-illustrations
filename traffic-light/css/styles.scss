@@ -1,0 +1,116 @@
+$traffic-light-bg: #222;
+$blink-red: red;
+$blink-yellow: yellow;
+$blink-green: green;
+
+.traffic-light {
+    width: 250px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__body {
+        width: 100%;
+        height: 100%;
+        background: $traffic-light-bg;
+        border: 5px solid white;
+        border-radius: 15px;
+        box-shadow: 0px 0px 50px $traffic-light-bg;
+        z-index: 2;
+    }
+
+    &__blink {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: repeating-linear-gradient(#333, #443 5px);
+
+        &--red {
+            background: $blink-red;
+            box-shadow: 0px 0px 50px $blink-red;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: lightUpRed 3s infinite;
+            animation-timing-function: step-end;
+        }
+
+        &--yellow {
+            // background: $blink-yellow;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: lightUpYellow 3s infinite;
+            animation-timing-function: step-end;
+        }
+
+        &--green {
+            // background: $blink-green;
+            top: 65%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: lightUpGreen 3s infinite;
+            animation-timing-function: step-end;
+        }
+    }
+
+    &__pole {
+        content: '';
+        z-index: 1;
+        height: 300px;
+        width: 100px;
+        background: #fffddd;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        bottom: -60%;
+        left: 50%;
+        box-shadow: 0px 0px 20px white;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes lightUpRed {
+    0% {
+        background: repeating-linear-gradient(#333, #443 5px);
+        box-shadow: none;
+    }
+    50% {
+        background: $blink-red;
+        box-shadow: 0px 0px 50px $blink-red;
+    }
+    100% {
+        background: repeating-linear-gradient(#333, #443 5px);
+        box-shadow: none;
+    }
+}
+
+@keyframes lightUpYellow {
+    0% {
+        background: repeating-linear-gradient(#333, #443 5px);
+        box-shadow: none;
+    }
+    50% {
+        background: $blink-yellow;
+        box-shadow: 0px 0px 50px $blink-yellow;
+    }
+    100% {
+        background: repeating-linear-gradient(#333, #443 5px);
+        box-shadow: none;
+    }
+}
+
+@keyframes lightUpGreen {
+    0% {
+        background: repeating-linear-gradient(#333, #443 5px);
+        box-shadow: none;
+    }
+    50% {
+        background: $blink-green;
+        box-shadow: 0px 0px 50px $blink-green;
+    }
+    100% {
+        background: repeating-linear-gradient(#333, #443 5px);
+        box-shadow: none;
+    }
+}
